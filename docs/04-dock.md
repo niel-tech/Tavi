@@ -1,0 +1,33 @@
+# 04 — Freestanding dock, display modes and group flyouts
+
+## Mandatory visual design
+
+macOS-inspired, not a full-width Windows toolbar. A floating rounded capsule centered horizontally near the bottom of the primary screen, with clear space on left, right and below. The native taskbar and Tavi are separate windows. No full-width visible background, rectangular strip, fake desktop or shell replacement.
+
+Design tokens (DIPs, configurable within sensible limits): icon 36, cell 48, internal padding 8, gap 6, corner radius 20, outer bottom gap 10, max width min(available width minus 32, 960). Size from actual content, center on the monitor rather than the primary screen's global coordinate zero. Overflow scroll or More popup when maximum width reached; never stretch to screen width. Native icons; subtle running dots, separator between global/workspace pins and unpinned running windows. Workspace selector at left, Settings/overflow at right. Dark/light/system theme, acrylic-like translucent surface where verified; solid fallback/high contrast. Modest hover scale only if layout stable, disable with reduced-motion settings. Optional labels/tooltips. No copied Apple branding or assets.
+
+Group popup anchored directly above the clicked icon, not above the center of the screen. Rounded surface visually consistent with dock. Responsive 3–5 column grid, title, icons and labels, keyboard focus, scroll and search, Add/Edit. Nested groups (max depth 8) navigate with breadcrumb/back. Same icon toggles popup; close on Esc, outside click, successful leaf launch, desktop change; restore focus. A group is a configured virtual collection, not a disk folder. It can mix local and UNC files, folders, executables, links, scripts, shortcuts and groups. Group click must not enumerate the network or launch all entries.
+
+## Windows implementation
+
+Use WinUI 3 Window with custom chrome and native HWND/AppWindow bridge. Verify supported transparent/rounded surface approach: e.g. bounded HWND region for rounded corners plus WinUI backdrop where compatible. Do not assume arbitrary per-pixel WinUI transparency. Use real shaped/bounded window; clicks outside capsule must pass to underlying desktop/app. No invisible full-screen input layer. A tested solid rounded surface is preferable to unsupported compositor hacks. Popup may use WinUI Flyout or separate bounded owned window if clipping occurs; verify nonmodal behavior and virtual desktop visibility. Keep ordinary Settings window separate from dock. Only dock, required popup and tray survive workspace switches; Settings need not be pinned everywhere.
+
+Use monitor work area, physical pixel coordinates for Win32 and consistent DPI conversion. Handle WM_DPICHANGED, monitor changes, taskbar state/position, shell restart, sleep/resume, fullscreen and maximized windows. Dock should not steal focus on hover or desktop change. Show only current-desktop running windows plus explicitly identified pinned/global windows; clicking running entry activates/minimizes according to policy, multiple windows open chooser. Never activate unrelated process by title match. Native taskbar continues to handle system functions.
+
+## Display mode A — supplementary
+
+Default; visible Windows taskbar remains. Floating dock above native taskbar with 10 DIP gap. Compute from work area and monitor; support actual taskbar positions, not hard-coded height. Use overlay as safe default (maximized windows may extend behind dock; user can hide dock temporarily). Optional "Reserve space for dock" setting uses AppBar only after interactive spike proves it works. Reserve bottom band via documented SHAppBarMessage ABM_NEW / ABM_QUERYPOS / ABM_SETPOS, honoring returned bounds; visible dock remains centered and rounded inside band. Document that Windows work area reservation is edge-wide, not only the capsule width. Do not use invisible intercepting windows; use noninteractive reservation HWND only if tested. Send ABM_REMOVE on detach and exit; handle ABN_POSCHANGED, fullscreen, taskbar recreation, WM_ACTIVATE and WM_WINDOWPOSCHANGED per Microsoft docs. Avoid registration loops. If unsupported, use safe overlay and report why.
+
+## Display mode B — primary floating dock
+
+Optional; visual alternative to native taskbar at its usual bottom position, not a replacement shell. Ask user to enable Windows Settings > Personalization > Taskbar > Taskbar behaviors > Automatically hide the taskbar (open settings on request). Never silently modify system settings. Observe ABM_GETSTATE and actual monitor/work area. With auto-hide active, position capsule centered near monitor bottom with gap, preserve native reveal strip and access; no competing autohide AppBar registration. If native bar reveals, yield/reposition/hide Tavi as necessary without blocking native interaction. Optional reservation only if proven compatible with auto-hide, otherwise overlay; native access is mandatory. If auto-hide disabled or shell geometry conflicts, fall back to supplementary with status and instructions. Test Win/Start, Win+A, Win+N, system tray reveal, fullscreen, DPI and display changes. Provide Settings and Exit through tray and standard Tavi shortcut even if dock geometry is invalid. Do not hide native taskbar via ShowWindow, inject Explorer, kill Explorer, intercept system hotkeys or modify undocumented registry. Exit restores Tavi's own resources, does not silently change user-selected auto-hide.
+
+Primary mode must be validated on real supported Windows builds; exact pixel positioning and native reveal behavior are compatibility risks. Full system tray, native taskbar replacement and independent per-monitor docks are not V1. Primary mode includes running indicators/window picker and optional clock, but no fake native system tray.
+
+## Editor
+
+Tree/detail editor with explicit save/cancel, add/edit/remove/group, reorder, move/copy, workspace assignment, startup mode. Drag StorageItems or safe path/URI text from Explorer; UNC metadata and icons async with bounded timeout/cache. Support internal ID drag with cycle prevention, insertion indicator and accessible alternatives. Confirm executable/script targets imported from untrusted configuration before enabling. Display validation and mode capability status in editor. Keyboard: Tab/arrow/Enter/Esc; Narrator, high contrast and 200% scaling. Never use actual credentials in screenshots.
+
+References:
+https://learn.microsoft.com/en-us/windows/win32/shell/application-desktop-toolbars
+https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shappbarmessage

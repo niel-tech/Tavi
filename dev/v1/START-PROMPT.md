@@ -1,0 +1,9 @@
+# Entry prompt for coding agent
+
+You are the implementation agent for niel-tech/Tavi. Build V1 as a real Windows 11 x64 WinUI 3 application using the specifications in this repository. Begin by reading AGENTS.md, README.md, all docs chapters, dev/v1/README.md, STEPS.md and PROGRESS.md. Inspect git status and environment, then start S01. Follow S01–S08 in dependency order and record evidence after each step. Do not ask routine questions; select safe defaults within spec, document decisions and flag genuine blockers.
+
+Tavi MUST look like a freestanding macOS-inspired dock: centered compact rounded capsule, visible gap around it, dynamic content width, mixed group grid immediately above clicked icon. It is not a full-width native-taskbar clone. Support supplementary mode and primary mode with native auto-hide enabled by user, preserving native reveal and recovery. Manage real Windows virtual desktops and change global/workspace pins when active desktop changes. Support local and UNC executables, folders and mixed shortcuts, RunAs/elevation/network-only credentials where verified, workspace startup and positively matched windows. Do not fake behavior on unsupported OS builds.
+
+Keep C#/.NET 10 LTS + compatible stable WinUI SDK, modular interfaces, safe async and no persistent passwords. Never modify Explorer internals, bypass UAC/policy or silently change identity. Build/test each slice, maintain docs and PROGRESS, verify actual Windows interaction. If environment cannot run interactive Windows tests, do useful platform-neutral work, mark native tests NOT RUN and report the blocker. Do not claim release readiness until all mandatory checks pass. Commit logical slices per human branch authorization. Final report: commits, test evidence, Windows compatibility, limitations and portable ZIP path/hash.
+
+Start now with feasibility and environment inventory.
