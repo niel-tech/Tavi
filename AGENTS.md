@@ -10,3 +10,5 @@
 8. No real credentials, internal paths, local settings or build outputs in Git. Review diff. Commit logical slices per human instructions; no force pushes.
 9. Verify API/dependency behavior from official docs/source; document deviations. Do not drop mandatory requirements silently.
 10. Final report: commits, completed and pending tasks, actual tests/compatibility, release artifact and blockers. V1 complete only after mandatory acceptance checks pass.
+
+11. Implement the mandatory customization chapter (docs/08-customization.md). Preserve the fixed far-right Settings control, ordered separator entries, per-workspace dock options and separate opt-in Windows sign-in registration. Use the checked-in Tavi vector icon catalog; do not substitute emoji or placeholders. Do not register autostart without user consent or silently undo an OS-disabled startup entry.

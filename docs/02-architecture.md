@@ -26,7 +26,13 @@ Core independent; Application -> Core; Windows implements Application ports; App
 - ICredentialPrompt: ephemeral credential lease; cancellation; zero memory on disposal.
 - IWindowTracker: eligible window snapshot, change events, launch correlation, activate, placement capture/restore.
 - IConfigurationStore: load/save/backup/import preview/export.
-- IIconProvider: bounded cancellable cache, generic fallback.
+- IIconProvider: native icon extraction, validated bundled Tavi icon catalog, theme-aware Outline/Soft rendering, bounded cancellable cache, generic fallback.
+- IStartupRegistrationService: read actual registration state, enable/disable/repair explicit per-user startup shortcut; report OS-policy uncertainty without bypass.
+- IDockLayoutService: pure ordered global/workspace entries including non-launchable separators, appearance inheritance, fixed workspace/settings controls and overflow layout.
 - IWorkspaceCoordinator: bind/switch/start/cancel and immutable state/status.
 
 Separate active native desktop from workspace selection. Serialize transitions; do not hold locks over IO/shell/UI. Coalesce native callbacks and marshal updates to UI. Do not persist HWND/PID. Single instance per interactive session; second launch activates Settings. Closing Settings leaves dock running. Tray and explicit Exit always available. Structured redacted logs, bounded background work, no constant busy polling.
+
+## Customization contracts
+
+Use discriminated DockEntry (PinEntry or SeparatorEntry) with stable IDs; groups contain launchable pins/groups only. Never route separators through ILaunchService or IWindowTracker. Add DockAppearance and nullable WorkspaceAppearanceOverride, IconSpec (source Native or Tavi, stable iconId, style Outline/Soft, optional palette token), and StartupRegistrationStatus. Keep machine-local sign-in registration outside portable workspace exports. Settings is a separate Window; selecting the gear opens Workspaces for the active binding, preserving uncommitted changes through explicit Save/Cancel. See docs/08-customization.md.

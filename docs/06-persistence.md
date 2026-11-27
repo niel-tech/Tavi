@@ -12,7 +12,9 @@ Illustrative JSON (IDs shown as actual GUIDs):
     "reserveSpace": false,
     "iconSizeDip": 36,
     "bottomGapDip": 10,
-    "theme": "system"
+    "theme": "system",
+    "iconStyle": "outline",
+    "showGlobalBoundary": false
   },
   "globalPins": [],
   "workspaces": [
@@ -20,12 +22,15 @@ Illustrative JSON (IDs shown as actual GUIDs):
       "id": "a563b2d5-7f6b-45b8-889a-11459bec9099",
       "name": "Testing",
       "nativeDesktopId": null,
+      "appearanceOverride": { "iconSizeDip": 40, "iconStyle": "soft" },
+      "icon": { "source": "tavi", "iconId": "desktop", "style": "outline" },
       "autoStartOnFirstActivation": false,
       "pins": [
         {
           "id": "05769cb3-e550-416b-9a2d-0881c86f8177",
           "kind": "group",
           "name": "Tools",
+          "icon": { "source": "tavi", "iconId": "group", "style": "soft", "color": "blue" },
           "children": [
             {
               "id": "059a8e0b-0f89-4009-bccd-a66827153b04",
@@ -40,6 +45,11 @@ Illustrative JSON (IDs shown as actual GUIDs):
               "reusePolicy": "newInstance"
             }
           ]
+        },
+        {
+          "id": "be867329-3959-40d9-8ae4-e1cd4ea549f2",
+          "kind": "separator",
+          "paddingDip": 6
         }
       ]
     }
@@ -47,6 +57,8 @@ Illustrative JSON (IDs shown as actual GUIDs):
 }
 ~~~
 
-Leaf optional icon reference (safe local/default), placement (monitor, logical bounds, show state), autoStart and reuse. Groups have children only; no implicit execution or startup flag. Validate enum values, unique IDs, depth <= 8, total entries <= 2000, file <= 4 MiB, bounded strings/args, kind/mode combinations, no cycles. Reject unknown schema versions with recovery instruction; migrate explicitly in later versions. Pin order global then workspace, separator, running windows. Move preserves IDs; copy recursively regenerates IDs.
+Leaf optional IconSpec (source native/tavi, stable catalog ID for tavi, optional style and color), placement (monitor, logical bounds, show state), autoStart and reuse. Groups have children only; no implicit execution or startup flag. Validate enum values, unique IDs, depth <= 8, total entries <= 2000, file <= 4 MiB, bounded strings/args, kind/mode combinations, no cycles. Reject unknown schema versions with recovery instruction; migrate explicitly in later versions. Dock order global entries then workspace entries (both arrays may contain ordered kind:separator records), optional boundary and running windows; system controls not serialized as pins. Separator contains only id, kind and optional paddingDip 4–12; reject target/arguments/launchMode/autoStart/children, and reject separators nested inside groups. Unknown catalog IDs degrade to generic icon with validation warning. Missing customization fields inherit documented defaults. Per-workspace appearance overrides are nullable and merged against global defaults. Move preserves IDs; copy recursively regenerates IDs.
 
 Export machine-portable JSON strips desktop GUID bindings by default, no credentials; explicitly review username hints and local paths before export. Import preview validates all entries, shows conflicts and unsupported targets; choose merge (new IDs) or replace with backup, confirm. Imported executable/scripts/shortcuts disabled until reviewed; auto-start cleared, no automatic network probing or launching. Bind desktops explicitly after import. Add JSON schema and synthetic example during S02; use tests roundtripping Unicode/UNC, corruption, interrupted write, conflict, import and backup. Keep data local; no analytics/cloud.
+
+Windows sign-in registration is machine-local, not a portable preference. Query actual owned Startup-folder shortcut; do not treat JSON as proof of registration or run-state. Exclude this registration from exports; import never registers it. Explicit user action required to enable, repair or disable. See docs/08-customization.md.

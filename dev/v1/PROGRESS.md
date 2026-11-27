@@ -14,3 +14,5 @@ Planning only. No application, build or Windows test executed by the planner.
 | S08 Release | Pending | — |
 
 For each task append date, commit, actual OS/SDK, changed files, build/test commands and exit codes, manual acceptance IDs and results, known blockers, decisions and next step. NOT RUN is not PASS. Track optional features separately from mandatory acceptance. No passwords or private hostnames.
+
+Planning revision: customization, Windows sign-in startup and bundled original icon sources added; all implementation tasks remain Pending. No WinUI rendering, Windows login or native tests have been run.

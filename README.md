@@ -10,7 +10,11 @@ Tavi is a native Windows 11 workspace manager. V1 is currently a specification, 
 - Two dock modes: supplementary (above visible Windows taskbar) and primary (near the bottom screen edge while Windows taskbar is set to auto-hide). Windows shell remains available.
 - Native virtual desktops, named workspaces, global pins and per-desktop pins. Automatically update the dock on desktop changes.
 - Clicking a group opens a grid of mixed programs, folders, UNC paths, files and shortcuts immediately above its dock icon.
-- Drag-and-drop, nesting, reorder, search, accessible keyboard navigation and native icons.
+- Drag-and-drop, nesting, reorder, search and accessible keyboard navigation.
+- User-inserted vertical separators anywhere within the global or workspace pin sequence; separate configuration per virtual desktop.
+- Always-visible Settings button at the far right: manage native desktops, their individual docks, global pins, appearance, icon selection and startup.
+- Original Tavi icon collection with native, Outline and Soft visual options; choose an icon per pin, group or workspace.
+- Opt-in Tavi autostart at Windows sign-in, independent of workspace application startup.
 - Local/UNC application launch, UAC elevation, alternate Windows user, network-only credentials where supported.
 - Workspace startup, window tracking, running indicators, optional window placement restoration.
 - Local JSON, secret-free import/export, portable self-contained x64 release.
@@ -26,6 +30,9 @@ Tavi is a native Windows 11 workspace manager. V1 is currently a specification, 
 | [05 Launching](docs/05-launch.md) | UNC, identity, UAC, windows |
 | [06 Persistence](docs/06-persistence.md) | Schema, import and security |
 | [07 Verification](docs/07-verification.md) | Tests, CI, build and publishing |
+| [08 Customization](docs/08-customization.md) | Separators, Settings, Windows autostart and selectable icons |
+
+Original vector icon sources and stable catalog: [assets/icons](assets/icons/README.md).
 
 ## Implement V1
 

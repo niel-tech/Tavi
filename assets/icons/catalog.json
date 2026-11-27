@@ -1,0 +1,337 @@
+{
+  "schemaVersion": 1,
+  "name": "Tavi Outline",
+  "viewBox": [
+    0,
+    0,
+    24,
+    24
+  ],
+  "strokeWidth": 1.65,
+  "styles": [
+    "outline",
+    "soft"
+  ],
+  "icons": [
+    {
+      "id": "application",
+      "category": "General",
+      "labels": {
+        "en": "Application",
+        "de": "Anwendung"
+      },
+      "file": "tavi-outline/application.svg",
+      "path": "M5 3.5 H19 Q20.5 3.5 20.5 5 V19 Q20.5 20.5 19 20.5 H5 Q3.5 20.5 3.5 19 V5 Q3.5 3.5 5 3.5 Z M3.5 8 H20.5 M7 5.8 H8 M10 5.8 H11"
+    },
+    {
+      "id": "folder",
+      "category": "Files",
+      "labels": {
+        "en": "Folder",
+        "de": "Ordner"
+      },
+      "file": "tavi-outline/folder.svg",
+      "path": "M3 7 Q3 5.5 4.5 5.5 H9 L11.5 8 H19.5 Q21 8 21 9.5 V18 Q21 19.5 19.5 19.5 H4.5 Q3 19.5 3 18 Z M3 10.5 H21"
+    },
+    {
+      "id": "network-folder",
+      "category": "Files",
+      "labels": {
+        "en": "Network folder",
+        "de": "Netzwerkordner"
+      },
+      "file": "tavi-outline/network-folder.svg",
+      "path": "M3 7 Q3 5.5 4.5 5.5 H9 L11.5 8 H19.5 Q21 8 21 9.5 V18 Q21 19.5 19.5 19.5 H4.5 Q3 19.5 3 18 Z M12 11 V14.5 M7.5 17 V14.5 H16.5 V17"
+    },
+    {
+      "id": "group",
+      "category": "Files",
+      "labels": {
+        "en": "Collection",
+        "de": "Gruppe"
+      },
+      "file": "tavi-outline/group.svg",
+      "path": "M4 5 H9 Q10 5 10 6 V10 Q10 11 9 11 H4 Q3 11 3 10 V6 Q3 5 4 5 Z M15 5 H20 Q21 5 21 6 V10 Q21 11 20 11 H15 Q14 11 14 10 V6 Q14 5 15 5 Z M4 14 H9 Q10 14 10 15 V19 Q10 20 9 20 H4 Q3 20 3 19 V15 Q3 14 4 14 Z M15 14 H20 Q21 14 21 15 V19 Q21 20 20 20 H15 Q14 20 14 19 V15 Q14 14 15 14 Z"
+    },
+    {
+      "id": "document",
+      "category": "Files",
+      "labels": {
+        "en": "Document",
+        "de": "Dokument"
+      },
+      "file": "tavi-outline/document.svg",
+      "path": "M6 3 H14 L19 8 V20 Q19 21 18 21 H6 Q5 21 5 20 V4 Q5 3 6 3 Z M14 3 V8 H19 M8.5 12 H15.5 M8.5 15 H15.5 M8.5 18 H13"
+    },
+    {
+      "id": "spreadsheet",
+      "category": "Files",
+      "labels": {
+        "en": "Spreadsheet",
+        "de": "Tabelle"
+      },
+      "file": "tavi-outline/spreadsheet.svg",
+      "path": "M5 3.5 H19 Q20 3.5 20 4.5 V19.5 Q20 20.5 19 20.5 H5 Q4 20.5 4 19.5 V4.5 Q4 3.5 5 3.5 Z M4 9 H20 M4 14.5 H20 M10 9 V20.5 M15 9 V20.5"
+    },
+    {
+      "id": "archive",
+      "category": "Files",
+      "labels": {
+        "en": "Archive",
+        "de": "Archiv"
+      },
+      "file": "tavi-outline/archive.svg",
+      "path": "M4 8 H20 V20 H4 Z M3 4 H21 V8 H3 Z M9 12 H15"
+    },
+    {
+      "id": "link",
+      "category": "Files",
+      "labels": {
+        "en": "Link",
+        "de": "Verknüpfung"
+      },
+      "file": "tavi-outline/link.svg",
+      "path": "M10.5 7.5 L13.2 4.8 Q16.3 1.7 19.4 4.8 Q22.5 7.9 19.4 11 L16.7 13.7 M13.5 16.5 L10.8 19.2 Q7.7 22.3 4.6 19.2 Q1.5 16.1 4.6 13 L7.3 10.3 M8.5 15.5 L15.5 8.5"
+    },
+    {
+      "id": "terminal",
+      "category": "Development",
+      "labels": {
+        "en": "Terminal",
+        "de": "Terminal"
+      },
+      "file": "tavi-outline/terminal.svg",
+      "path": "M4.5 4.5 H19.5 Q21 4.5 21 6 V18 Q21 19.5 19.5 19.5 H4.5 Q3 19.5 3 18 V6 Q3 4.5 4.5 4.5 Z M7 9 L10 12 L7 15 M12.5 15 H17"
+    },
+    {
+      "id": "code",
+      "category": "Development",
+      "labels": {
+        "en": "Code",
+        "de": "Code"
+      },
+      "file": "tavi-outline/code.svg",
+      "path": "M8 6 L3.5 12 L8 18 M16 6 L20.5 12 L16 18 M13.8 4.5 L10.2 19.5"
+    },
+    {
+      "id": "database",
+      "category": "Development",
+      "labels": {
+        "en": "Database",
+        "de": "Datenbank"
+      },
+      "file": "tavi-outline/database.svg",
+      "path": "M4 6 Q4 3.5 12 3.5 Q20 3.5 20 6 Q20 8.5 12 8.5 Q4 8.5 4 6 Z M4 6 V18 Q4 20.5 12 20.5 Q20 20.5 20 18 V6 M4 12 Q4 14.5 12 14.5 Q20 14.5 20 12"
+    },
+    {
+      "id": "server",
+      "category": "Development",
+      "labels": {
+        "en": "Server",
+        "de": "Server"
+      },
+      "file": "tavi-outline/server.svg",
+      "path": "M5 3.5 H19 Q20.5 3.5 20.5 5 V9 Q20.5 10.5 19 10.5 H5 Q3.5 10.5 3.5 9 V5 Q3.5 3.5 5 3.5 Z M5 13.5 H19 Q20.5 13.5 20.5 15 V19 Q20.5 20.5 19 20.5 H5 Q3.5 20.5 3.5 19 V15 Q3.5 13.5 5 13.5 Z M7 7 H7.5 M7 17 H7.5 M11 7 H17 M11 17 H17"
+    },
+    {
+      "id": "network",
+      "category": "Development",
+      "labels": {
+        "en": "Network",
+        "de": "Netzwerk"
+      },
+      "file": "tavi-outline/network.svg",
+      "path": "M9 3 H15 V8 H9 Z M4 16 H9 V21 H4 Z M15 16 H20 V21 H15 Z M12 8 V12 H6.5 V16 M12 12 H17.5 V16"
+    },
+    {
+      "id": "cloud",
+      "category": "Development",
+      "labels": {
+        "en": "Cloud",
+        "de": "Cloud"
+      },
+      "file": "tavi-outline/cloud.svg",
+      "path": "M6.8 18.5 Q3 18.5 3 14.7 Q3 11.5 6.3 10.9 Q7 5 12.2 5 Q16.3 5 18 9.7 Q21 10.2 21 13.8 Q21 18.5 16.8 18.5 Z"
+    },
+    {
+      "id": "branch",
+      "category": "Development",
+      "labels": {
+        "en": "Source control",
+        "de": "Versionsverwaltung"
+      },
+      "file": "tavi-outline/branch.svg",
+      "path": "M6 3.5 V16 M6 10 Q16 10 16 7 V5 M6 16 Q3.5 16 3.5 18.5 Q3.5 21 6 21 Q8.5 21 8.5 18.5 Q8.5 16 6 16 Z M13.5 3 Q13.5 1.8 16 1.8 Q18.5 1.8 18.5 4 Q18.5 6.2 16 6.2 Q13.5 6.2 13.5 4 Z"
+    },
+    {
+      "id": "desktop",
+      "category": "Workspace",
+      "labels": {
+        "en": "Desktop",
+        "de": "Desktop"
+      },
+      "file": "tavi-outline/desktop.svg",
+      "path": "M4.5 4 H19.5 Q21 4 21 5.5 V15.5 Q21 17 19.5 17 H4.5 Q3 17 3 15.5 V5.5 Q3 4 4.5 4 Z M12 17 V20 M7.5 20 H16.5"
+    },
+    {
+      "id": "workspaces",
+      "category": "Workspace",
+      "labels": {
+        "en": "Workspaces",
+        "de": "Arbeitsbereiche"
+      },
+      "file": "tavi-outline/workspaces.svg",
+      "path": "M8 3 H20 Q21 3 21 4 V12 Q21 13 20 13 H17 M4 7 H16 Q17 7 17 8 V19 Q17 20 16 20 H4 Q3 20 3 19 V8 Q3 7 4 7 Z M3 10 H17"
+    },
+    {
+      "id": "remote",
+      "category": "Workspace",
+      "labels": {
+        "en": "Remote desktop",
+        "de": "Remotedesktop"
+      },
+      "file": "tavi-outline/remote.svg",
+      "path": "M4.5 4 H19.5 Q21 4 21 5.5 V15 Q21 16.5 19.5 16.5 H4.5 Q3 16.5 3 15 V5.5 Q3 4 4.5 4 Z M12 16.5 V20 M8 20 H16 M8 12.5 L15.5 8 M12 8 H15.5 V11.5"
+    },
+    {
+      "id": "globe",
+      "category": "Communication",
+      "labels": {
+        "en": "Web",
+        "de": "Web"
+      },
+      "file": "tavi-outline/globe.svg",
+      "path": "M12 3 C7 3 3 7 3 12 C3 17 7 21 12 21 C17 21 21 17 21 12 C21 7 17 3 12 3 Z M3.5 12 H20.5 M12 3 Q5 12 12 21 M12 3 Q19 12 12 21"
+    },
+    {
+      "id": "mail",
+      "category": "Communication",
+      "labels": {
+        "en": "Mail",
+        "de": "E-Mail"
+      },
+      "file": "tavi-outline/mail.svg",
+      "path": "M4.5 5.5 H19.5 Q21 5.5 21 7 V17 Q21 18.5 19.5 18.5 H4.5 Q3 18.5 3 17 V7 Q3 5.5 4.5 5.5 Z M3.5 7 L12 13 L20.5 7"
+    },
+    {
+      "id": "chat",
+      "category": "Communication",
+      "labels": {
+        "en": "Chat",
+        "de": "Chat"
+      },
+      "file": "tavi-outline/chat.svg",
+      "path": "M5 4 H19 Q21 4 21 6 V15 Q21 17 19 17 H11 L6 21 V17 H5 Q3 17 3 15 V6 Q3 4 5 4 Z M7 9 H17 M7 13 H14"
+    },
+    {
+      "id": "calendar",
+      "category": "General",
+      "labels": {
+        "en": "Calendar",
+        "de": "Kalender"
+      },
+      "file": "tavi-outline/calendar.svg",
+      "path": "M5 5 H19 Q20.5 5 20.5 6.5 V19 Q20.5 20.5 19 20.5 H5 Q3.5 20.5 3.5 19 V6.5 Q3.5 5 5 5 Z M8 3 V7 M16 3 V7 M3.5 10 H20.5 M8 14 H10 M14 14 H16 M8 17 H10"
+    },
+    {
+      "id": "clock",
+      "category": "General",
+      "labels": {
+        "en": "Clock",
+        "de": "Uhr"
+      },
+      "file": "tavi-outline/clock.svg",
+      "path": "M12 3 C7 3 3 7 3 12 C3 17 7 21 12 21 C17 21 21 17 21 12 C21 7 17 3 12 3 Z M12 6.5 V12 L15.5 14"
+    },
+    {
+      "id": "search",
+      "category": "General",
+      "labels": {
+        "en": "Search",
+        "de": "Suche"
+      },
+      "file": "tavi-outline/search.svg",
+      "path": "M10 3.5 C6.4 3.5 3.5 6.4 3.5 10 C3.5 13.6 6.4 16.5 10 16.5 C13.6 16.5 16.5 13.6 16.5 10 C16.5 6.4 13.6 3.5 10 3.5 Z M14.8 14.8 L20.5 20.5"
+    },
+    {
+      "id": "lock",
+      "category": "Security",
+      "labels": {
+        "en": "Lock",
+        "de": "Schloss"
+      },
+      "file": "tavi-outline/lock.svg",
+      "path": "M6 10 H18 Q19.5 10 19.5 11.5 V19 Q19.5 20.5 18 20.5 H6 Q4.5 20.5 4.5 19 V11.5 Q4.5 10 6 10 Z M8 10 V7 Q8 3.5 12 3.5 Q16 3.5 16 7 V10 M12 14 V17"
+    },
+    {
+      "id": "shield",
+      "category": "Security",
+      "labels": {
+        "en": "Shield",
+        "de": "Schutz"
+      },
+      "file": "tavi-outline/shield.svg",
+      "path": "M12 3 L20 6 V11 Q20 17 12 21 Q4 17 4 11 V6 Z M8.5 12 L11 14.5 L16 9.5"
+    },
+    {
+      "id": "key",
+      "category": "Security",
+      "labels": {
+        "en": "Key",
+        "de": "Schlüssel"
+      },
+      "file": "tavi-outline/key.svg",
+      "path": "M8 4 C5.2 4 3 6.2 3 9 C3 11.8 5.2 14 8 14 Q10.4 14 11.6 12.2 L20 20 L21 19 L18.5 16.5 L20 15 L17.5 12.5 L16 14 L12.5 10.5 Q13.2 7.8 11.5 6 Q10 4 8 4 Z M7 8 H8"
+    },
+    {
+      "id": "flask",
+      "category": "General",
+      "labels": {
+        "en": "Laboratory",
+        "de": "Labor"
+      },
+      "file": "tavi-outline/flask.svg",
+      "path": "M9 3 H15 M10 3 V9 L4.5 18 Q3.2 20.5 6 20.5 H18 Q20.8 20.5 19.5 18 L14 9 V3 M7.5 14 H16.5"
+    },
+    {
+      "id": "chart",
+      "category": "General",
+      "labels": {
+        "en": "Chart",
+        "de": "Diagramm"
+      },
+      "file": "tavi-outline/chart.svg",
+      "path": "M4 4 V20 H21 M8 16 V12 M12 16 V8 M16 16 V10 M20 16 V5"
+    },
+    {
+      "id": "tools",
+      "category": "General",
+      "labels": {
+        "en": "Tools",
+        "de": "Werkzeuge"
+      },
+      "file": "tavi-outline/tools.svg",
+      "path": "M14.5 4 Q17 2.5 20 4.5 L16.5 8 L18 10 L21 7 Q21.5 11 18.5 13 Q16 14.5 13.8 13 L6 20.5 Q4.8 21.5 3.5 20.2 Q2.2 19 3.5 17.8 L11.3 10 Q10.2 7 12.2 5.3 Q13.2 4.5 14.5 4 Z"
+    },
+    {
+      "id": "settings",
+      "category": "General",
+      "labels": {
+        "en": "Settings",
+        "de": "Einstellungen"
+      },
+      "file": "tavi-outline/settings.svg",
+      "path": "M9.5 3 H14.5 L15.2 6.1 L17 7.2 L20 6.3 L22 10 L19.8 12 L19.8 13 L22 15 L20 18.7 L17 17.8 L15.2 18.9 L14.5 21 H9.5 L8.8 18.9 L7 17.8 L4 18.7 L2 15 L4.2 13 V12 L2 10 L4 6.3 L7 7.2 L8.8 6.1 Z M12 9 C10.3 9 9 10.3 9 12 C9 13.7 10.3 15 12 15 C13.7 15 15 13.7 15 12 C15 10.3 13.7 9 12 9 Z"
+    },
+    {
+      "id": "power",
+      "category": "General",
+      "labels": {
+        "en": "Power",
+        "de": "Ein/Aus"
+      },
+      "file": "tavi-outline/power.svg",
+      "path": "M12 3 V12 M7 5.5 C3 8.5 2.5 14 6 17.5 C9 21 15 21 18 17.5 C21.5 14 21 8.5 17 5.5"
+    }
+  ]
+}
